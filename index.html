@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta content="noindex, nofollow" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Jérémy Genty : données climatiques, environnement et forêt</title>
+<meta content="Portfolio de Jérémy Genty, diplômé du Master Agrosciences, Environnement, Territoires, Paysage, Forêt (Université d'Orléans) : extrêmes climatiques, données spatialisées, R et SIG." name="description"/>
+<link href="style.css?v=20261013b" rel="stylesheet"/>
+<meta content="website" property="og:type"/>
+<meta content="Jérémy Genty : données climatiques, environnement et forêt" property="og:title"/>
+<meta content="Portfolio : extrêmes climatiques et mortalité des forêts, cartographie, télédétection, écologie et génétique." property="og:description"/>
+<meta content="https://jeremygenty36-boop.github.io/images/carte_txx_tendance.png" property="og:image"/><meta content="https://jeremygenty36-boop.github.io/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🌲&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<link href="en.html" hreflang="en" rel="alternate"/></head>
+<body>
+<header class="hero">
+<div class="enveloppe"><a class="drapeau" href="en.html" hreflang="en" title="English version"><img alt="English version" height="20" src="images/drapeau_gb.svg" width="30"/></a>
+<div class="identite"><img alt="Photo de Jérémy Genty" class="photo" height="132" src="images/photo_jeremy.jpg" width="132"/><div class="identite-txt"><p class="sur">Portfolio</p><h1>Jérémy Genty</h1><p class="titre">Données climatiques, environnement et forêt</p></div></div>
+<div class="presentation">
+<p class="pitch">Diplômé du Master Agrosciences, Environnement, Territoires, Paysage, Forêt (Université d'Orléans), je travaille à la croisée du climat, de la forêt et des données. Pendant mon stage à l'UMR Silva, j'ai étudié l'effet de la chaleur, du froid et de la sécheresse sur la mortalité des arbres ; auparavant, j'ai passé six mois sur le terrain en santé des végétaux et étudié les insectes auxiliaires des vergers en Belgique.</p>
+<ul class="savoir-faire">
+<li><b>Analyser des données</b> : traiter de grands jeux de données climatiques et forestiers sous R, construire et valider des modèles statistiques.</li>
+<li><b>Cartographier</b> : analyses spatiales sous QGIS et PostGIS, télédétection par satellite (Sentinel-2), cartes web interactives.</li>
+<li><b>Aller sur le terrain</b> : relevés de flore et phytosociologie, piégeage et identification d'insectes, contrôles phytosanitaires.</li>
+<li><b>Transmettre</b> : rapports, notes de synthèse, posters, présentations orales et supports pédagogiques.</li>
+</ul>
+<p class="pitch">Curieux de nature, j'aime comprendre comment les choses fonctionnent, apprendre de nouveaux outils et relier les disciplines, du climat à la génétique. Proactif et créatif, j'aime proposer, entreprendre et construire : quand un outil me manque, je le crée, comme ma carte des extrêmes climatiques ou ma plateforme de révision. Je garde un esprit critique sur les données comme sur mes propres résultats, et j'ai le goût de la pédagogie : expliquer simplement une méthode fait partie du travail. Ce qui me guide dans chaque projet, c'est l'envie d'apprendre et de m'enrichir.</p>
+</div>
+<p class="liens"><a class="bouton" href="mailto:genty.jeremy36@gmail.com">Me contacter</a>
+<a class="bouton secondaire" href="documents/CV_Jeremy_Genty_foret.pdf">CV forêt (PDF)</a>
+<a class="bouton secondaire" href="documents/CV_Jeremy_Genty_climat_agriculture.pdf">CV climat et agriculture (PDF)</a>
+<a class="bouton secondaire" href="documents/Resume_portfolio_Jeremy_Genty.pdf">Résumé imprimable (PDF, 2 pages)</a>
+<a class="bouton secondaire" href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-genty/">LinkedIn</a>
+<a class="bouton secondaire" href="https://github.com/jeremygenty36-boop">GitHub</a>
+</p><ul class="en-bref">
+<li><b>Master 2</b><span>Agrosciences, environnement, territoires, paysage, forêt · Université d'Orléans, 2026</span></li>
+<li><b>21 989</b><span>placettes forestières analysées pendant mon stage</span></li>
+<li><b>6 mois</b><span>de terrain réglementaire en santé des végétaux (FREDON)</span></li>
+<li><b>R · QGIS · télédétection</b><span>et Python en cours d'apprentissage</span></li>
+<li><b>Anglais B2/C1</b><span>stage Erasmus+ en Belgique · permis B</span></li>
+</ul>
+</div>
+</header><nav aria-label="Sommaire" class="sommaire enveloppe">
+<a href="#projets">Projets</a><a href="#formation">Autres travaux</a><a href="#genetique-ecologie">Génétique et écologie</a><a href="#outils">Outils</a><a href="#parcours">Parcours</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
+<span class="nav-btns"><button id="tout-ouvrir" type="button">Tout déplier</button><button id="tout-fermer" type="button">Tout replier</button></span>
+</nav>
+<main class="enveloppe">
+<section id="projets">
+<h2>Projets</h2>
+<article class="projet">
+<div>
+<p class="etiquette">Stage de Master 2 · UMR Silva, AgroParisTech, Nancy · 2026</p>
+<h3>Extrêmes climatiques et mortalité des arbres</h3>
+<h4>Résultats clés</h4><ul class="cles">
+<li><b>Même performance, lecture différente.</b> Les 5 bases expliquent la mortalité aussi bien les unes que les autres (AUC de 0,758 à 0,763). Mais pour 6 essences sur 8, l'extrême climatique le plus important change selon la base utilisée.</li>
+<li><b>Les bases s'accordent sur l'intensité, pas sur la fréquence.</b> Pour les températures extrêmes, les bases sont très corrélées (R² de 0,85 à 0,87) ; pour les vagues de chaleur et de froid et pour la sécheresse, beaucoup moins (R² de 0,14 à 0,6).</li>
+<li><b>Le climat reste secondaire.</b> Les extrêmes pèsent en moyenne 8,2 % de l'explication de la mortalité (de 1,1 % pour le hêtre à 26 % pour le bouleau) ; la structure du peuplement domine. Une résolution de 1 km n'améliore pas les modèles à l'échelle de la France.</li>
+<li><b>Extrêmes ou climat moyen ?</b> Les indices d'extrêmes ne prédisent pas mieux la mortalité que le climat moyen : les AUC des deux approches diffèrent au plus de 0,003, et le climat moyen pèse même un peu plus (9,0 % contre 8,2 %).</li>
+</ul><details class="detail"><summary>Méthode, figures et documents</summary><p>Les bases de données climatiques ne donnent pas les mêmes extrêmes. Est-ce que ce choix change ce qu'on conclut sur la mortalité des forêts ? J'ai calculé 6 indices d'extrêmes (chaleur, froid, sécheresse) avec 5 bases climatiques, dont deux que j'ai descendues de 8-10 km à 1 km, puis modélisé la mortalité de 8 essences sur 21 989 placettes de l'Inventaire forestier national (GLM sous R, sélection par BIC, 1 000 partitions de validation).</p><h4>Situer ce travail</h4><p>À ma connaissance, peu d'études portent spécifiquement sur le rôle des extrêmes climatiques dans la mortalité des forêts ; la plus proche est celle de Carletti et al. (2026), sur le sapin et l'épicéa. Malgré des méthodes différentes, certaines tendances concordent : chez l'épicéa, les variables les plus explicatives sont aussi liées à la chaleur, et chez le sapin les deux études trouvent un rôle des vagues de froid (5,5 % de l'importance dans mon étude contre 2,5 %). Les extrêmes y pèsent en revanche bien plus (jusqu'à 22 % chez le sapin et 29 % chez l'épicéa) : cette étude portait sur des peuplements purs et incluait les extrêmes d'automne, absents de la mienne.</p><div class="figures">
+<figure>
+<div class="fig-cadre">
+<img alt="Deux cartes des Alpes du Nord : température minimale en mailles de 8 km, puis à 1 km où vallées et crêtes apparaissent" loading="lazy" src="images/descente_echelle_alpes.png"/>
+<span class="fig-label g">SAFRAN 8 km</span><span class="fig-label d">1 km (descente d'échelle)</span><span class="fig-nord">▲<br/>N</span>
+</div>
+<div class="fig-legende"><span>−3 °C</span><span class="degrade"></span><span>8,5 °C</span></div>
+<figcaption>Température minimale moyenne de 2014 dans les Alpes du Nord. La descente d'échelle (méthode delta, corrigée par DIGITALIS à 1 km) fait apparaître les vallées et les crêtes.</figcaption>
+</figure>
+<figure>
+<img alt="Tableau : pour chaque essence et chaque base climatique, l'extrême climatique le plus important du modèle de mortalité" loading="lazy" src="images/ece_dominant_par_base.png"/>
+<figcaption>L'extrême le plus important du modèle de mortalité, par essence et par base climatique. Seuls le pin noir et l'épicéa gardent le même (TXx) avec les 5 bases. Extrait de mon poster.</figcaption>
+</figure>
+</div><h4>Et après ?</h4><ul class="cles">
+<li><b>Résolution et sélection :</b> comprendre pourquoi davantage d'indices entrent dans les modèles à 1 km.</li>
+<li><b>Extrêmes d'automne :</b> les intégrer, puisqu'ils pèsent chez Carletti et al. (2026).</li>
+<li><b>Froid et ravageurs :</b> tester l'effet indirect du froid via les scolytes de l'épicéa, avec des données biotiques.</li>
+<li><b>Données plus fines :</b> examiner les produits Météo-France à 2,5 km et alimenter des modèles mécanistes comme SurEau.</li>
+</ul><p class="qualite"><b>Démarche qualité.</b> J'ai publié la chaîne de traitement complète en accès libre, avec un registre de 17 points (ERRATA) qui documente chaque erreur trouvée après coup et son effet sur les résultats : aucune n'invalide les conclusions, la plus exposée étant le faible poids de la sécheresse. Les valeurs aberrantes ont été conservées et expliquées plutôt qu'écartées.</p><ul class="outils"><li>R</li><li>terra</li><li>Climpact</li><li>GLM</li><li>Données IFN</li><li>Descente d'échelle</li></ul><p class="liens"><a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret/blob/main/docs/rapport_stage_M2_Genty_2026.pdf">Rapport de stage (PDF)</a> · <a href="documents/Poster_stage_M2_Genty_2026.pdf">Poster (PDF, A0)</a> · <a href="documents/Soutenance_stage_M2_Genty_2026.pdf">Diaporama de soutenance (PDF, 41 diapositives)</a> · <a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret">Dépôt du code</a> · <a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret/blob/main/ERRATA.md">ERRATA</a></p></details></div>
+<a class="poster" href="documents/Poster_stage_M2_Genty_2026.pdf"><img alt="Aperçu du poster de stage : Même performance, lecture différente" loading="lazy" src="images/poster_vignette.png"/><span>Voir le poster</span></a>
+</article><article class="projet vedette">
+<figure class="vignette-carte"><p class="fig-titre">Tendance des extrêmes de chaleur (TXx), 1979-2024</p><a class="visuel" href="carte/"><img alt="Carte de France de la tendance des extrêmes de chaleur entre 1979 et 2024" loading="lazy" src="images/carte_txx_tendance.png"/></a><div class="fig-legende"><span>−1,4</span><span class="degrade-tend"></span><span>+1,4 °C par décennie</span></div><figcaption>Évolution de la température maximale la plus élevée de l'année (mars à novembre), par cellule d'environ 10 km. Rouge : réchauffement des extrêmes ; bleu : refroidissement ; teintes estompées : tendance non significative (7 % du territoire). Cliquez sur la carte pour l'ouvrir.</figcaption></figure>
+<div>
+<p class="etiquette">Carte interactive · 2026</p>
+<h3>Extrêmes climatiques en France : 1979-2024</h3>
+<p class="resultat">Les journées les plus chaudes de l'année ont gagné 0,8 °C par décennie en moyenne en France depuis 1979, et les vagues de chaleur sont passées de 1,4 à 5 par an (de mai à septembre, moyennes 1979-1988 et 2015-2024).</p>
+<details class="detail"><summary>Méthode, figures et documents</summary><p>Six indices de chaleur, de froid et de sécheresse (dont les vagues de chaleur et de froid), année par année, sur toute la France métropolitaine. J'ai recalculé les indices depuis les observations européennes E-OBS (11 Go de données journalières), avec la méthode de mon stage, puis construit une carte interactive : animation des années, extrêmes par période de 10 ans, tendances avec leur significativité, et série d'un lieu au clic.</p><p>La carte fait le lien avec mon stage : pour chaque indice, elle montre ce qu'il pèse dans les modèles de mortalité des 8 essences et la courbe de réponse de chaque essence, et une seconde couche cartographie la mortalité observée dans l'Inventaire forestier par département.</p><ul class="outils"><li>R</li><li>NetCDF</li><li>SPEI</li><li>JavaScript</li><li>Cartographie</li></ul><p class="liens"><a href="carte/">Ouvrir la carte</a> · <a href="https://github.com/jeremygenty36-boop/carte-extremes-climatiques">Code</a></p></details></div>
+</article>
+<article class="projet" id="fredon">
+<div>
+<p class="etiquette">Expérience professionnelle · FREDON Centre-Val de Loire, Orléans · juin-décembre 2022 · par délégation de la DRAAF</p>
+<h3>Technicien spécialisé : inspections phytosanitaires</h3>
+<p class="resultat">Six mois de terrain réglementaire en santé des végétaux, au contact direct des professionnels.</p>
+<details class="detail"><summary>Missions</summary>
+<ul class="cles">
+<li><b>Contrôles du passeport phytosanitaire européen</b> chez des horticulteurs, des pépiniéristes et des jardineries.</li>
+<li><b>Relevés en jardins, espaces végétalisés et infrastructures (JEVI).</b></li>
+<li><b>Comptes rendus d'inspection écrits</b> et échanges avec les professionnels contrôlés.</li>
+</ul>
+<ul class="outils"><li>Santé des végétaux</li><li>Réglementation</li><li>Terrain</li><li>Relation avec les professionnels</li></ul>
+</details>
+</div>
+</article>
+<article class="projet" id="landes">
+<div>
+<p class="etiquette">Projet de Master 1 · Écologie du paysage et SIG, Université d'Orléans · 2023-2024 · avec Pierre Sergent</p>
+<h3>Cartographier les incendies de l'été 2022 dans les Landes de Gascogne</h3>
+<p class="resultat">À La Teste-de-Buch, nous mesurons 3 538 ha brûlés, pour 3 500 ha annoncés par la presse, et 12 737 ha autour d'Hostens. Précision globale de 93,8 % en surface.</p>
+<details class="detail"><summary>Méthode, figures et documents</summary><p>À partir de deux images satellite Sentinel-2 (septembre 2021 et septembre 2022), nous avons cartographié les forêts brûlées par les deux grands foyers de l'été 2022 : différence d'indice de végétation (NDVI) avant et après, masque forêt tiré de la carte d'occupation des sols OSO, seuillage en trois classes de probabilité, tamisage et vectorisation sous QGIS et Orfeo ToolBox, puis validation par photo-interprétation de 50 polygones par classe.</p><figure class="seule">
+<img alt="Carte des surfaces brûlées en 2022 entre le bassin d'Arcachon et Hostens, en trois classes de probabilité" loading="lazy" src="images/landes_incendies_2022.jpg"/>
+<figcaption>Carte finale : surfaces brûlées selon la probabilité de détection, sur fond d'image Sentinel-2. Nous signalons aussi les limites, comme des erreurs d'attribution de la carte OSO.</figcaption>
+</figure><ul class="outils"><li>Sentinel-2</li><li>NDVI</li><li>QGIS</li><li>Orfeo ToolBox</li><li>Photo-interprétation</li></ul><p class="liens"><a href="documents/Incendies_Landes_2022_Genty_Sergent.pdf">Présentation complète (PDF, 40 diapositives)</a></p></details></div>
+</article>
+<article class="projet" id="phyto">
+<div>
+<p class="etiquette">Master 1 · Phytosociologie et phytoécologie, Université d'Orléans · 2023-2024 · avec Claire Bellin</p>
+<h3>Phytosociologie des prairies et pelouses du Loiret</h3>
+<p class="resultat">11 groupements végétaux identifiés. Les deux grands ensembles diffèrent par la richesse et l'humidité du sol (Mann-Whitney, p &lt; 0,001), pas par le pH. Limite assumée et signalée : la structure de la classification reste faible (silhouette moyenne de 0,08).</p>
+<details class="detail"><summary>Méthode, figures et documents</summary><p>À partir de 258 relevés floristiques sur trois sites du Loiret (Saint-Mesmin, Tavers, Guilly), nous avons regroupé les relevés par classification ascendante hiérarchique (distance de corde, méthode de Ward), choisi le nombre de groupes avec la silhouette et OptimClass, rattaché chaque groupe à un syntaxon décrit (association ou alliance), puis comparé les groupes par écogrammes et tableau synoptique pour proposer une gestion adaptée.</p><figure class="seule">
+<img alt="Dendrogramme des 258 relevés séparés en deux grands groupes et onze clusters" loading="lazy" src="images/phyto_dendrogramme.jpg"/>
+<figcaption>Dendrogramme des relevés : deux grands groupes et 11 clusters, rattachés ensuite à des syntaxons décrits.</figcaption>
+</figure><ul class="outils"><li>Botanique</li><li>Relevés de terrain</li><li>Classification</li><li>R</li><li>Gestion des milieux</li></ul><p class="liens"><a href="documents/Phytosociologie_Loiret_Bellin_Genty.pdf">Diaporama de l'oral (PDF)</a></p></details></div>
+</article>
+<article class="projet">
+<div>
+<p class="etiquette">Stage de Master 1 · Gembloux Agro-Bio Tech (Université de Liège) et CRA-W, projet Lipomme BIO · 2024</p>
+<h3>Un fongicide biologique nuit-il aux insectes auxiliaires du verger ?</h3>
+<p class="resultat">1 813 insectes de 31 familles, sans différence de communauté entre traitements (p = 0,276) : la météo pèse bien plus que le traitement. J'y discute les biais du protocole, comme les insectes de passage entre arbres voisins.</p>
+<details class="detail"><summary>Méthode, figures et documents</summary><p>La mycosubtiline, une molécule antifongique d'origine bactérienne, est étudiée comme alternative au cuivre et au soufre contre la tavelure du pommier. J'ai comparé les insectes capturés par pièges jaunes sous quatre traitements (eau, mycosubtiline, soufre et cuivre, méthode GAWI), sur 4 répétitions de 10 pommiers pendant 18 semaines : identification à la famille, analyse en composantes principales et test de Kruskal-Wallis sous R.</p><ul class="outils"><li>Terrain</li><li>Entomologie</li><li>R</li><li>Statistiques</li><li>Poster</li></ul><p class="liens"><a href="documents/Poster_stage_M1_Genty_2024.pdf">Poster (PDF)</a></p></details></div>
+<a class="poster" href="documents/Poster_stage_M1_Genty_2024.pdf"><img alt="Aperçu du poster de stage de Master 1 sur la mycosubtiline et les insectes auxiliaires" loading="lazy" src="images/poster_m1_vignette.jpg"/><span>Voir le poster</span></a>
+</article>
+</section>
+<section id="formation">
+<h2>Autres travaux de formation</h2>
+<div class="travaux">
+<article class="travail" id="capricorne">
+<a href="documents/Poster_capricorne_asiatique_Genty_Paillard.pdf"><img alt="Aperçu du poster sur la phylogéographie du capricorne asiatique" class="portrait" loading="lazy" src="images/capricorne_poster.jpg"/></a>
+<div>
+<p class="etiquette">M1 · Biologie évolutive · 2023 · avec Emma Paillard</p>
+<h3>Phylogéographie du capricorne asiatique</h3>
+<details class="detail"><summary>Détails et document</summary><p>Retracer les voies d'invasion d'<i>Anoplophora glabripennis</i> et d'<i>A. chinensis</i> en France à partir de séquences ADN : piégeage, PCR, séquençage du gène COI, arbres phylogénétiques sous MEGA.</p><ul class="outils"><li>Espèces invasives</li><li>Santé des forêts</li><li>Génétique</li></ul><p class="liens"><a href="documents/Poster_capricorne_asiatique_Genty_Paillard.pdf">Poster (PDF)</a></p></details></div>
+</article>
+<article class="travail" id="sandillon">
+<a href="documents/Restauration_carriere_Sandillon_Bellin_Genty.pdf"><img alt="Carte des points de relevés faune et flore sur la carrière de Sandillon" loading="lazy" src="images/sandillon_releves.jpg"/></a>
+<div>
+<p class="etiquette">M1 · Écologie de la restauration · 2024 · avec Claire Bellin</p>
+<h3>Restauration écologique d'une carrière (Sandillon, Loiret)</h3>
+<details class="detail"><summary>Détails et document</summary><p>Comparer des zones exploitées jusqu'en 2006 et 2016 à une zone témoin : points d'écoute des oiseaux, pièges à carabes, plaques à reptiles, relevés de flore ; similarité de Jaccard, types biologiques de Raunkiaer, valeurs écologiques d'Ellenberg.</p><ul class="outils"><li>Inventaires faune-flore</li><li>Restauration</li><li>QGIS</li><li>R</li></ul><p class="liens"><a href="documents/Restauration_carriere_Sandillon_Bellin_Genty.pdf">Rapport (PDF, 19 pages)</a></p></details></div>
+</article>
+<article class="travail" id="courpain">
+<a href="documents/Habitats_carriere_Courpain_Genty_Beaubois.pdf"><img alt="Carte des habitats de l'ancienne carrière de Courpain avec les points GPS des relevés" loading="lazy" src="images/courpain_habitats.jpg"/></a>
+<div>
+<p class="etiquette">L3 · Phytosociologie et géomatique · 2021 · avec Vélinka Beaubois</p>
+<h3>Cartographie des habitats d'une ancienne carrière (Courpain)</h3>
+<details class="detail"><summary>Détails et document</summary><p>Sur une carrière de 17 ha réaménagée : relevés de végétation géolocalisés, carte des habitats sous QGIS (4,2 ha de pelouses et prairies, 5,1 ha de plan d'eau), analyses factorielles et dendrogrammes distinguant trois grands types de végétation.</p><ul class="outils"><li>Cartographie d'habitats</li><li>GPS</li><li>QGIS</li><li>Phytosociologie</li></ul><p class="liens"><a href="documents/Habitats_carriere_Courpain_Genty_Beaubois.pdf">Compte rendu (PDF)</a></p></details></div>
+</article>
+<article class="travail">
+<div>
+<p class="etiquette">M1 · Phytopathologie · 2023-2024 · avec Garance Delmas</p>
+<h3>Rouille du peuplier et diagnostic des maladies des végétaux</h3>
+<details class="detail"><summary>Détails et document</summary><p>Pathotypage de souches de <i>Melampsora larici-populina</i> sur des clones de peuplier : une souche caractérisée, l'autre ininterprétable faute d'infection du témoin, ce que nous discutons. Puis 25 fiches de diagnostic : oïdiums, rouilles, galles, gui, feu bactérien, viroses.</p><ul class="outils"><li>Phytopathologie</li><li>Santé des forêts</li><li>Diagnostic</li></ul><p class="liens"><a href="documents/Rouille_peuplier_phytopathologie_Genty_Delmas.pdf">Compte rendu (PDF)</a></p></details></div>
+</article>
+</div>
+</section>
+<section id="genetique-ecologie">
+<h2>Formation : génétique et écologie</h2>
+<p class="intro-section">Au-delà du climat et des données, ma formation en biologie à l'Université d'Orléans m'a donné deux autres cordes : la génétique des populations et l'écologie, de l'individu au paysage.</p>
+<p class="points-forts"><b>1<sup>er</sup> de promotion</b> en Biologie évolutive et génétique des populations (16,5/20), en Réseaux écologiques (15,75/20) et en Génomique des écosystèmes forestiers (15,5/20) ; <b>2<sup>e</sup></b> en Écologie des communautés (17,5/20).</p>
+<div class="deux-col">
+<div class="col-ue">
+<h3>🧬 Génétique et évolution</h3>
+<ul class="ue">
+<li class="depliable"><details class="ue-detail"><summary><b>Biologie évolutive et génétique des populations</b><span>M1 · 16,5/20, 1<sup>er</sup> sur 20</span></summary><small>Phylogéographie, populations subdivisées et modèles de migration.</small><small class="rendu">Rendus : <a href="#capricorne">poster sur la phylogéographie du capricorne asiatique</a> ; présentation d'article à cinq sur la phylogéographie du guépard en Afrique et en Asie (Charruau et al., 2011) et ses enjeux pour la conservation. <a href="documents/Phylogeographie_guepard_Genty_Paillard_Sergent_Bellin_Moussa.pdf">Diaporama (PDF, 39 diapositives)</a></small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Génomique au service de la biologie intégrative</b><span>M2 · 14,3/20, 2<sup>e</sup> sur 17</span></summary><small>Dont une étude de cas en génomique des écosystèmes forestiers (15,5/20, 1<sup>er</sup>) et une initiation à la bioinformatique.</small><small class="rendu">Rendu : présentation d'article à quatre sur l'épigénétique des interactions arbre-champignon : l'hypométhylation de l'ADN de l'arbre hôte perturbe la symbiose avec un champignon ectomycorhizien (Vigneaud et al., 2023).</small></details></li>
+<li><b>Biologie évolutive et génomique des populations</b><span>M2</span></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Génétique et amélioration des plantes</b><span>M1 · Génétique 2 : 15/20</span></summary><small class="rendu">Rendu individuel : résistance à la sécheresse de deux génotypes de peuplier (Skado, Koster) selon la fertilisation azotée, mesurée par la P50 (tension provoquant 50 % d'embolie) à partir de courbes de vulnérabilité sous R. Chez Skado, la P50 diffère significativement entre apport d'azote faible et optimal. <a href="documents/Cavitation_peuplier_Genty_2024.pdf">Compte rendu (PDF)</a></small></details></li>
+<li><b>Génomique</b><span>M1</span></li>
+<li><b>Biologie évolutive et moléculaire, techniques de biologie moléculaire</b><span>Licence</span></li>
+</ul>
+</div>
+<div class="col-ue">
+<h3>🌿 Écologie</h3>
+<ul class="ue">
+<li class="depliable"><details class="ue-detail"><summary><b>Écologie de la restauration</b><span>M1 · 15,25/20, 2<sup>e</sup> sur 20</span></summary><small>Dont Écologie des communautés : concepts et outils (17,5/20).</small><small class="rendu">Rendu : <a href="#sandillon">rapport sur la restauration de la carrière de Sandillon</a> (inventaires oiseaux, carabes, reptiles et flore ; analyses sous R).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Réseaux écologiques</b><span>M2 · 15,75/20, 1<sup>er</sup> sur 17</span></summary><small class="rendu">TD sous R : comparaison de réseaux d'interactions plantes-insectes en milieu ornemental et sauvage (connectance, emboîtement, compartiments ; packages bipartite et igraph).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Écologie du paysage et SIG</b><span>M1 · 15,84/20, 4<sup>e</sup> sur 38</span></summary><small class="rendu">Rendu : <a href="#landes">cartographie des incendies de 2022 dans les Landes</a> (Sentinel-2, QGIS).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Phytosociologie et phytoécologie</b><span>M1 et L3</span></summary><small class="rendu">Rendus : <a href="#phyto">oral sur les prairies et pelouses du Loiret</a> (M1) ; <a href="#courpain">cartographie des habitats de Courpain</a> (L3).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Biologie de l'invasion, biologie de la conservation</b><span>M2</span></summary><small class="rendu">Rendus : vidéo d'analyse d'article sur l'invasion du frelon à pattes jaunes en Europe (Arca et al., 2015), 8 min, avec Claire Bellin ; carte conceptuelle de la biologie de la conservation (à quatre).</small><video class="video-ue" controls="" poster="images/frelon_video_apercu.jpg" preload="none" src="documents/Frelon_asiatique_analyse_article_Genty_Bellin.mp4">Votre navigateur ne lit pas la vidéo : <a href="documents/Frelon_asiatique_analyse_article_Genty_Bellin.mp4">la télécharger</a>.</video></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Forêts et changements climatiques</b><span>M2</span></summary><small>Enjeux et leviers d'adaptation, suivis sanitaires en forêt.</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Écotoxicologie et phytoremédiation</b><span>M1</span></summary><small class="rendu">Rendu avec Claire Bellin : phytostabilisation des métaux d'un sol minier végétalisé par le saule, assistée par du biochar.</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Écologie des populations, des communautés, fonctionnelle ; bio-indication</b><span>Licence · Écologie des populations : 16/20</span></summary><small class="rendu">Rendu : compte rendu de pédologie sur les sols de la forêt domaniale d'Orléans (massif d'Ingrannes), avec Robin Cascales.</small></details></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="outils">
+<h2>Outils que je me suis construits</h2>
+<p class="intro-section">Pour mes propres besoins, j'ai conçu quelques outils : ils montrent que je sais automatiser une tâche et aller au-delà de R. Je les ai développés avec l'aide d'un assistant IA (Claude) : je définis le besoin, je teste et je valide chaque étape.</p>
+<div class="travaux">
+<article class="travail"><div>
+<p class="etiquette">Application macOS · Swift et web · hors ligne</p>
+<h3>Apprendre : ma plateforme de révision</h3>
+<details class="detail"><summary>Détails</summary>
+<p>Des cours et plus de 800 questions à choix multiple avec explications, révisées par répétition espacée : botanique, statistiques, R, Python (avec une console Python intégrée), SQL. Je l'utilise pour approfondir un sujet nouveau à partir de la documentation que je rassemble.</p>
+<ul class="outils"><li>Swift</li><li>JavaScript</li><li>Apprentissage</li></ul>
+</details>
+</div></article>
+<article class="travail"><div>
+<p class="etiquette">Python et JavaScript · tâche quotidienne automatique</p>
+<h3>Une veille scientifique automatisée</h3>
+<details class="detail"><summary>Détails</summary>
+<p>Chaque matin, un script interroge la base bibliographique OpenAlex sur mes thèmes (dépérissement, extrêmes climatiques, télédétection, santé des forêts…) et me présente les nouveaux articles. Un clic envoie un article dans Zotero avec son PDF en accès libre et le range automatiquement dans le bon dossier.</p>
+<ul class="outils"><li>Python</li><li>API OpenAlex</li><li>Zotero</li><li>Automatisation</li></ul>
+</details>
+</div></article>
+</div>
+</section><section id="parcours">
+<h2>Parcours</h2>
+<ol class="frise">
+<li><span class="date">févr.-juil. 2026</span><div><b>Stage de Master 2 : extrêmes climatiques et mortalité forestière</b><br/>UMR Silva, Nancy</div></li>
+<li><span class="date">2023-2026</span><div><b>Master Agrosciences, Environnement, Territoires, Paysage, Forêt</b><br/>Université d'Orléans. Stage de M2 noté 16,3/20.</div></li>
+<li><span class="date">févr.-avr. 2024</span><div><b>Stage de Master 1 : biocontrôle en verger</b><br/>Gembloux Agro-Bio Tech, Belgique. Mobilité Erasmus+.</div></li>
+<li><span class="date">juin-déc. 2022</span><div><b>Technicien spécialisé : inspections phytosanitaires</b><br/>FREDON Centre-Val de Loire, par délégation de la DRAAF. Contrôles du passeport phytosanitaire européen chez les horticulteurs, pépiniéristes et jardineries.</div></li>
+<li><span class="date">2019-2023</span><div><b>Licence Sciences de la vie : biologie des organismes, populations et écosystèmes</b><br/>Université d'Orléans</div></li>
+</ol>
+</section>
+<section id="competences">
+<h2>Compétences</h2>
+<div class="grille">
+<div><h3>Climat et environnement</h3><p>Extrêmes climatiques, sécheresse (SPEI), produits climatiques (SAFRAN, E-OBS, CHELSA), adaptation au changement climatique, santé des végétaux.</p></div>
+<div><h3>Données et analyse</h3><p>R (terra, modèles linéaires généralisés), données NetCDF, SIG (QGIS, PostGIS, SQL), télédétection (Sentinel-2, NDVI, Orfeo ToolBox), statistiques. Python en cours d'apprentissage.</p></div>
+<div><h3>Restitution</h3><p>Rapports et notes de synthèse, cartes et figures, présentations orales, posters, pages web interactives.</p></div>
+<div><h3>Terrain</h3><p>Relevés floristiques et phytosociologie, piégeage et identification d'insectes, contrôles réglementaires, relation avec les professionnels, ornithologie.</p></div>
+<div><h3>Langues</h3><p>Français (langue maternelle), anglais B2/C1, allemand A2.</p></div>
+<div><h3>Centres d'intérêt</h3><p>Botanique, ornithologie, vélo, course à pied, randonnée.</p></div></div>
+</section>
+<section class="contact" id="contact">
+<h2>Contact</h2>
+<p>Je recherche un poste de chargé d'études ou de chargé de mission sur le climat, les données environnementales ou la forêt.</p>
+<p><a class="bouton" href="mailto:genty.jeremy36@gmail.com">genty.jeremy36@gmail.com</a> <a class="bouton secondaire" href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-genty/">LinkedIn</a></p>
+<p class="references">Références disponibles sur demande : encadrants de mes stages de Master 2 et de Master 1.</p></section>
+</main>
+<footer class="enveloppe"><p>© 2026 Jérémy Genty. Mise à jour : octobre 2026. Page statique, sans traceur ni cookie. <a href="en.html" hreflang="en" title="English version"><img alt="English version" class="drapeau-pied" height="14" src="images/drapeau_gb.svg" width="21"/></a></p></footer>
+<script>
+document.getElementById("tout-ouvrir").onclick = () => document.querySelectorAll("details").forEach(d => d.open = true);
+document.getElementById("tout-fermer").onclick = () => document.querySelectorAll("details").forEach(d => d.open = false);
+// un lien interne vers un element replie l'ouvre
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", () => {
+  const c = document.querySelector(a.getAttribute("href")); if (!c) return;
+  let d = c.closest("details"); while (d) { d.open = true; d = d.parentElement.closest("details"); }
+  c.querySelectorAll(":scope > div > details.detail").forEach(x => x.open = true);
+}));
+</script></body>
+</html>

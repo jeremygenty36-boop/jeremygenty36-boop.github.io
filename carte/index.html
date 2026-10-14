@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta content="noindex, nofollow" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Extrêmes climatiques en France : 1979-2024</title>
+<meta content="Carte interactive des extrêmes de chaleur, de froid et de sécheresse en France métropolitaine (1979-2024), recalculés depuis E-OBS." name="description"/>
+<link href="style.css?v=20261013b" rel="stylesheet"/>
+<link href="en.html" hreflang="en" rel="alternate"/></head>
+<body>
+<header><nav class="barre-haut"><a class="retour" href="../index.html">← Retour au portfolio</a><a class="drapeau" href="en.html" hreflang="en" title="English version"><img alt="English version" height="20" src="drapeau_gb.svg" width="30"/></a></nav>
+<h1>Extrêmes climatiques en France : 1979-2024</h1>
+<p class="sous">Six indices de chaleur, de froid et de sécheresse, année par année, recalculés depuis les observations E-OBS (grille de 0,1°, environ 10 km). France métropolitaine hors Corse.</p>
+</header>
+<main>
+<section class="panneau carte-zone">
+<div class="controles">
+<div aria-label="Couche" class="groupe" id="choix-couche" role="tablist">
+<button class="actif" data-couche="climat">Extrêmes climatiques</button>
+<button data-couche="mortalite">Mortalité des arbres observée</button>
+</div>
+</div>
+<div class="controles" hidden="" id="ctl-mort">
+<select aria-label="Essence" id="essence"></select>
+<small>part des placettes de l'Inventaire forestier où au moins un arbre de l'essence est mort (2015-2023)</small>
+</div>
+<div id="ctl-climat">
+<div class="controles">
+<div aria-label="Indice" class="groupe" id="choix-indice" role="tablist"></div>
+<div aria-label="Affichage" class="groupe" id="choix-mode" role="tablist">
+<button class="actif" data-mode="annee">Année</button>
+<button data-mode="periode">Période de 10 ans</button>
+<button data-mode="tendance">Tendance</button>
+</div>
+</div>
+</div>
+<div class="controles" id="ctl-annee">
+<button class="rond" id="lecture" title="Animer les années">▶</button>
+<input aria-label="Année" id="annee" max="2024" min="1979" type="range" value="2024"/>
+<strong id="annee-txt">2024</strong>
+</div>
+<div class="controles" hidden="" id="ctl-periode">
+<select aria-label="Période" id="periode"></select>
+<small id="periode-aide"></small>
+</div>
+<div class="carte-wrap">
+<canvas aria-label="Carte de France de l'indice sélectionné" height="720" id="carte" width="760"></canvas>
+<div hidden="" id="infobulle"></div>
+</div>
+<div id="legende"></div>
+<p class="def" id="definition"></p>
+<div id="mortalite-zone">
+<h2>🌲 Ce que cet indice pèse dans la mortalité des arbres</h2>
+<p class="aide">Résultat de mon stage : modèles de mortalité de 8 essences sur les placettes de l'Inventaire forestier national (2015-2023), ajustés avec chacune des 5 bases climatiques. Barre : importance relative de l'indice dans le modèle, moyenne des 5 bases ; trait fin : écart entre les bases.</p>
+<div id="mortalite"></div>
+<p class="aide" id="mortalite-note"></p>
+<div hidden="" id="courbe-zone">
+<h3 id="courbe-titre"></h3>
+<svg aria-label="Courbe de réponse de la mortalité à l'indice" id="courbe" role="img" viewbox="0 0 520 250"></svg>
+<p class="aide">Courbe illustrative : un modèle réajusté une seule fois par essence et par base sur toutes les placettes (part d'arbres morts prédite), l'indice variant entre ses valeurs courantes et les autres variables restant à leur moyenne. Les importances et les sens ci-dessus viennent, eux, des 1 000 partitions du modèle principal.</p>
+</div>
+</div>
+<div hidden="" id="mort-obs-info">
+<h2>🌲 Lire cette carte</h2>
+<p class="aide">Pour chaque département, la part des couples placette × essence de l'Inventaire forestier national (campagnes 2015-2023) où au moins un arbre de l'essence est mort : c'est la variable que modélisaient les modèles de mortalité de mon stage (21 989 placettes, 34 255 couples, Corse exclue). Les départements avec moins de 20 couples sont laissés en gris. Cliquez sur un département pour comparer les essences.</p>
+<p class="aide">Ces taux reflètent surtout l'âge et la structure des peuplements, qui pèsent environ 92 % dans les modèles ; les extrêmes climatiques n'en expliquent qu'une petite part.</p>
+</div>
+</section>
+<section class="panneau">
+<h2 id="titre-graphe">Moyenne France</h2>
+<p class="aide" id="aide-graphe">Cliquez sur la carte pour afficher l'évolution d'un lieu.</p>
+<svg aria-label="Évolution annuelle de l'indice" id="graphe" role="img" viewbox="0 0 520 300"></svg>
+<div id="chiffres"></div>
+<div class="encadre">
+<b>Une carte parmi d'autres possibles.</b> Dans mon stage, j'ai calculé ces indices avec 5 bases climatiques. Elles s'accordent bien sur l'intensité de la chaleur et du froid (TXx, TNn : R² de 0,85 à 0,87 entre bases), beaucoup moins sur les vagues, les jours secs et le SPEI (R² de 0,14 à 0,6). Ces cartes E-OBS sont donc une version des extrêmes, pas la seule.
+    </div>
+<div class="encadre">
+<b>Pourquoi les bases ne donnent pas les mêmes extrêmes.</b> Elles ne sont pas construites de la même façon. SAFRAN (Météo-France) découpe la France en 615 zones supposées homogènes, où seule l'altitude fait varier le climat. E-OBS interpole les stations du réseau européen sans modéliser le relief : sa précision dépend de la densité des stations, plus faible en montagne. CHELSA descend d'une réanalyse mondiale (ERA5) en s'appuyant sur le relief, sans observations de stations.
+    </div>
+<h2>Méthode</h2>
+<ul class="methode">
+<li><b>Données :</b> E-OBS v31.0e, moyenne d'ensemble, températures et précipitations journalières sur grille de 0,1°.</li>
+<li><b>TXx :</b> maximum de la température maximale journalière, de mars à novembre.</li>
+<li><b>TNn :</b> minimum de la température minimale journalière, de septembre de l'année précédente à mai.</li>
+<li><b>HWN :</b> nombre de vagues de chaleur de mai à septembre, une vague étant au moins 3 jours consécutifs au-dessus du 90<sup>e</sup> centile de Tmax du jour calendaire (fenêtre de ±7 jours, référence 1979-1989).</li>
+<li><b>CWN :</b> nombre de vagues de froid de septembre à mai, au moins 3 jours consécutifs sous le 10<sup>e</sup> centile de Tmin du jour calendaire (même méthode).</li>
+<li><b>WG10P :</b> part des jours de mars à août où le bilan pluie moins évapotranspiration du jour passe sous son 10<sup>e</sup> centile mensuel de 1979-1989 (environ 10 % sur la référence).</li>
+<li><b>SPEI6 :</b> bilan pluie moins évapotranspiration (Hargreaves) cumulé sur 6 mois et standardisé sur la normale 1981-2010 ; valeur la plus basse de mars à août. Négatif = plus sec que la normale.</li>
+<li><b>Période de 10 ans :</b> règle propre à chaque indice, calculée cellule par cellule : maximum pour TXx, minimum pour TNn et SPEI6, total pour HWN et CWN, moyenne pour WG10P. Un extrême n'est jamais moyenné.</li>
+<li><b>Tendance :</b> pente d'une régression linéaire 1979-2024, par décennie. Les cellules où la tendance n'est pas significative (p ≥ 0,05) sont estompées.</li>
+<li><b>Valeurs manquantes :</b> une saison avec plus de 10 % de jours manquants est laissée vide. Aucune valeur n'est écrêtée.</li>
+</ul>
+<p class="aide">Méthode reprise de mon stage de Master 2 sur les extrêmes climatiques et la mortalité des arbres (UMR Silva), où cinq bases climatiques étaient comparées. Code : <a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret">dépôt du stage</a>.</p>
+<h2>Sources</h2>
+<p class="aide">We acknowledge the E-OBS dataset from the EU-FP6 project UERRA (https://www.uerra.eu) and the Copernicus Climate Change Service, and the data providers in the ECA&amp;D project (https://www.ecad.eu). Cornes et al. (2018), <i>An Ensemble Version of the E-OBS Temperature and Precipitation Data Sets</i>, J. Geophys. Res. Atmos., 123. Contours des départements : IGN Admin Express (Licence Ouverte), version simplifiée de france-geojson.</p>
+<p class="aide">Réalisation : Jérémy Genty, 2026.</p>
+</section>
+</main>
+<script src="app.js?v=20261013b"></script>
+</body>
+</html>

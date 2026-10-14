@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="noindex, nofollow" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Climate extremes in France: 1979-2024</title>
+<meta content="Interactive map of heat, cold and drought extremes in mainland France (1979-2024), recomputed from E-OBS." name="description"/>
+<link href="style.css?v=20261013b" rel="stylesheet"/>
+<link href="index.html" hreflang="fr" rel="alternate"/></head>
+<body>
+<header><nav class="barre-haut"><a class="retour" href="../en.html">← Back to portfolio</a><a class="drapeau" href="index.html" hreflang="fr" title="Version française"><img alt="Version française" height="20" src="drapeau_fr.svg" width="30"/></a></nav>
+<h1>Climate extremes in France: 1979-2024</h1>
+<p class="sous">Six heat, cold and drought indices, year by year, recomputed from E-OBS observations (0.1° grid, about 10 km). Mainland France excluding Corsica.</p>
+</header>
+<main>
+<section class="panneau carte-zone">
+<div class="controles">
+<div aria-label="Layer" class="groupe" id="choix-couche" role="tablist">
+<button class="actif" data-couche="climat">Climate extremes</button>
+<button data-couche="mortalite">Observed tree mortality</button>
+</div>
+</div>
+<div class="controles" hidden="" id="ctl-mort">
+<select aria-label="Species" id="essence"></select>
+<small>share of National Forest Inventory plots where at least one tree of the species died (2015-2023)</small>
+</div>
+<div id="ctl-climat">
+<div class="controles">
+<div aria-label="Index" class="groupe" id="choix-indice" role="tablist"></div>
+<div aria-label="Display" class="groupe" id="choix-mode" role="tablist">
+<button class="actif" data-mode="annee">Year</button>
+<button data-mode="periode">10-year period</button>
+<button data-mode="tendance">Trend</button>
+</div>
+</div>
+</div>
+<div class="controles" id="ctl-annee">
+<button class="rond" id="lecture" title="Animate years">▶</button>
+<input aria-label="Year" id="annee" max="2024" min="1979" type="range" value="2024"/>
+<strong id="annee-txt">2024</strong>
+</div>
+<div class="controles" hidden="" id="ctl-periode">
+<select aria-label="Period" id="periode"></select>
+<small id="periode-aide"></small>
+</div>
+<div class="carte-wrap">
+<canvas aria-label="Map of France for the selected index" height="720" id="carte" width="760"></canvas>
+<div hidden="" id="infobulle"></div>
+</div>
+<div id="legende"></div>
+<p class="def" id="definition"></p>
+<div id="mortalite-zone">
+<h2>🌲 How much this index weighs in tree mortality</h2>
+<p class="aide">Result of my internship: mortality models for 8 tree species on National Forest Inventory plots (2015-2023), fitted with each of the 5 climate datasets. Bar: relative importance of the index in the model, averaged over the 5 datasets; thin line: range across datasets.</p>
+<div id="mortalite"></div>
+<p class="aide" id="mortalite-note"></p>
+<div hidden="" id="courbe-zone">
+<h3 id="courbe-titre"></h3>
+<svg aria-label="Mortality response curve to the index" id="courbe" role="img" viewbox="0 0 520 250"></svg>
+<p class="aide">Illustrative curve: a model refitted once per species and dataset on all plots (predicted share of dead trees), with the index varying over its usual range and other variables held at their mean. The importances and directions above come from the 1,000 splits of the main model.</p>
+</div>
+</div>
+<div hidden="" id="mort-obs-info">
+<h2>🌲 Reading this map</h2>
+<p class="aide">For each département, the share of plot × species pairs in the National Forest Inventory (2015-2023 surveys) where at least one tree of the species died: this is the variable modelled in my internship (21,989 plots, 34,255 pairs, Corsica excluded). Départements with fewer than 20 pairs are left grey. Click a département to compare species.</p>
+<p class="aide">These rates mostly reflect stand age and structure, which weigh about 92% in the models; climate extremes explain only a small part.</p>
+</div>
+</section>
+<section class="panneau">
+<h2 id="titre-graphe">France average</h2>
+<p class="aide" id="aide-graphe">Click the map to show a location's time series.</p>
+<svg aria-label="Annual evolution of the index" id="graphe" role="img" viewbox="0 0 520 300"></svg>
+<div id="chiffres"></div>
+<div class="encadre">
+<b>One map among several possible.</b> In my internship I computed these indices with 5 climate datasets. They agree well on the intensity of heat and cold (TXx, TNn: R² of 0.85 to 0.87 between datasets), much less on waves, dry days and SPEI (R² of 0.14 to 0.6). These E-OBS maps are therefore one version of the extremes, not the only one.
+    </div>
+<div class="encadre">
+<b>Why datasets do not give the same extremes.</b> They are not built the same way. SAFRAN (Météo-France) divides France into 615 supposedly homogeneous zones where only elevation changes the climate. E-OBS interpolates European station data without modelling terrain: its accuracy depends on station density, which is lower in mountains. CHELSA downscales a global reanalysis (ERA5) using terrain, without station observations.
+    </div>
+<h2>Method</h2>
+<ul class="methode">
+<li><b>Data:</b> E-OBS v31.0e, ensemble mean, daily temperature and precipitation on a 0.1° grid.</li>
+<li><b>TXx:</b> maximum of the daily maximum temperature, March to November.</li>
+<li><b>TNn:</b> minimum of the daily minimum temperature, September of the previous year to May.</li>
+<li><b>HWN:</b> number of heatwaves from May to September, a wave being at least 3 consecutive days above the 90<sup>th</sup> percentile of Tmax for the calendar day (±7-day window, 1979-1989 reference).</li>
+<li><b>CWN:</b> number of cold spells from September to May, at least 3 consecutive days below the 10<sup>th</sup> percentile of Tmin for the calendar day (same method).</li>
+<li><b>WG10P:</b> share of days from March to August when the daily rainfall-minus-evapotranspiration balance falls below its 10<sup>th</sup> monthly percentile of 1979-1989 (about 10% over the reference).</li>
+<li><b>SPEI6:</b> rainfall minus evapotranspiration (Hargreaves) accumulated over 6 months and standardised on the 1981-2010 normal; lowest value from March to August. Negative = drier than normal.</li>
+<li><b>10-year period:</b> a rule specific to each index, computed cell by cell: maximum for TXx, minimum for TNn and SPEI6, total for HWN and CWN, mean for WG10P. An extreme is never averaged.</li>
+<li><b>Trend:</b> slope of a 1979-2024 linear regression, per decade. Cells where the trend is not significant (p ≥ 0.05) are faded.</li>
+<li><b>Missing values:</b> a season with more than 10% missing days is left empty. No value is clipped.</li>
+</ul>
+<p class="aide">Method taken from my Master's internship on climate extremes and tree mortality (UMR Silva), where five climate datasets were compared. Code: <a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret">internship repository</a>.</p>
+<h2>Sources</h2>
+<p class="aide">We acknowledge the E-OBS dataset from the EU-FP6 project UERRA (https://www.uerra.eu) and the Copernicus Climate Change Service, and the data providers in the ECA&amp;D project (https://www.ecad.eu). Cornes et al. (2018), <i>An Ensemble Version of the E-OBS Temperature and Precipitation Data Sets</i>, J. Geophys. Res. Atmos., 123. Département boundaries: IGN Admin Express (Licence Ouverte), simplified version from france-geojson.</p>
+<p class="aide">By Jérémy Genty, 2026.</p>
+</section>
+</main>
+<script src="app.js?v=20261013b"></script>
+</body>
+</html>

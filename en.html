@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="noindex, nofollow" name="robots"/><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Jérémy Genty: climate data, environment and forests</title>
+<meta content="Portfolio of Jérémy Genty, MSc in Agricultural and Environmental Sciences, Landscape and Forestry (University of Orléans): climate extremes, gridded data, R and GIS." name="description"/>
+<link href="style.css?v=20261013b" rel="stylesheet"/>
+<meta content="website" property="og:type"/>
+<meta content="Jérémy Genty: climate data, environment and forests" property="og:title"/>
+<meta content="Portfolio: climate extremes and forest mortality, mapping, remote sensing, ecology and genetics." property="og:description"/>
+<meta content="https://jeremygenty36-boop.github.io/images/carte_txx_tendance.png" property="og:image"/><meta content="https://jeremygenty36-boop.github.io/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🌲&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<link href="index.html" hreflang="fr" rel="alternate"/></head>
+<body>
+<header class="hero">
+<div class="enveloppe"><a class="drapeau" href="index.html" hreflang="fr" title="Version française"><img alt="Version française" height="20" src="images/drapeau_fr.svg" width="30"/></a>
+<div class="identite"><img alt="Photo of Jérémy Genty" class="photo" height="132" src="images/photo_jeremy.jpg" width="132"/><div class="identite-txt"><p class="sur">Portfolio</p><h1>Jérémy Genty</h1><p class="titre">Climate data, environment and forests</p></div></div>
+<div class="presentation">
+<p class="pitch">With a Master's degree in Agricultural and Environmental Sciences, Landscape and Forestry (University of Orléans), I work where climate, forests and data meet. During my internship at UMR Silva, I studied how heat, cold and drought affect tree mortality; before that, I spent six months in the field in plant health and studied beneficial insects in orchards in Belgium.</p>
+<ul class="savoir-faire">
+<li><b>Analysing data</b>: processing large climate and forest datasets in R, building and validating statistical models.</li>
+<li><b>Mapping</b>: spatial analysis in QGIS and PostGIS, satellite remote sensing (Sentinel-2), interactive web maps.</li>
+<li><b>Fieldwork</b>: plant surveys and phytosociology, insect trapping and identification, plant-health inspections.</li>
+<li><b>Communicating</b>: reports, briefing notes, posters, talks and teaching materials.</li>
+</ul>
+<p class="pitch">Curious by nature, I like to understand how things work, learn new tools and connect disciplines, from climate to genetics. Proactive and creative, I like to suggest ideas, take the initiative and build things: when a tool is missing, I make it, like my climate-extremes map or my study platform. I stay critical of data and of my own results, and I enjoy teaching: explaining a method simply is part of the job. What drives me in every project is the wish to keep learning and growing.</p>
+</div>
+<p class="liens"><a class="bouton" href="mailto:genty.jeremy36@gmail.com">Contact me</a>
+<a class="bouton secondaire" href="documents/CV_Jeremy_Genty_foret.pdf">CV, forestry (PDF, in French)</a>
+<a class="bouton secondaire" href="documents/CV_Jeremy_Genty_climat_agriculture.pdf">CV, climate and agriculture (PDF, in French)</a>
+<a class="bouton secondaire" href="documents/Resume_portfolio_Jeremy_Genty.pdf">Printable summary (PDF, 2 pages, in French)</a>
+<a class="bouton secondaire" href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-genty/">LinkedIn</a>
+<a class="bouton secondaire" href="https://github.com/jeremygenty36-boop">GitHub</a>
+</p><ul class="en-bref">
+<li><b>MSc</b><span>Agricultural and environmental sciences, landscape and forestry · University of Orléans, 2026</span></li>
+<li><b>21,989</b><span>forest inventory plots analysed during my internship</span></li>
+<li><b>6 months</b><span>of regulatory plant-health fieldwork (FREDON)</span></li>
+<li><b>R · QGIS · remote sensing</b><span>and Python (currently learning)</span></li>
+<li><b>English B2/C1</b><span>Erasmus+ internship in Belgium · driving licence</span></li>
+</ul>
+</div>
+</header><nav aria-label="Contents" class="sommaire enveloppe">
+<a href="#projets">Projects</a><a href="#formation">Other work</a><a href="#genetique-ecologie">Genetics and ecology</a><a href="#outils">Tools</a><a href="#parcours">Background</a><a href="#competences">Skills</a><a href="#contact">Contact</a>
+<span class="nav-btns"><button id="tout-ouvrir" type="button">Expand all</button><button id="tout-fermer" type="button">Collapse all</button></span>
+</nav>
+<main class="enveloppe">
+<section id="projets">
+<h2>Projects</h2>
+<article class="projet">
+<div>
+<p class="etiquette">Master's internship · UMR Silva, AgroParisTech, Nancy · 2026</p>
+<h3>Climate extremes and tree mortality</h3>
+<h4>Key findings</h4><ul class="cles">
+<li><b>Same performance, different reading.</b> The 5 datasets explain mortality equally well (AUC 0.758 to 0.763). But for 6 of the 8 species, the most important climate extreme changes with the dataset used.</li>
+<li><b>Datasets agree on intensity, not on frequency.</b> For extreme temperatures the datasets are highly correlated (R² 0.85 to 0.87); for heatwaves, cold spells and drought, much less so (R² 0.14 to 0.6).</li>
+<li><b>Climate remains secondary.</b> Extremes account for 8.2% of the explained mortality on average (from 1.1% for beech to 26% for birch); stand structure dominates. A 1 km resolution does not improve the models at the scale of France.</li>
+<li><b>Extremes or mean climate?</b> Extreme-event indices do not predict mortality better than mean climate: the AUCs of both approaches differ by at most 0.003, and mean climate even weighs slightly more (9.0% vs 8.2%).</li>
+</ul><details class="detail"><summary>Method, figures and documents</summary><p>Climate datasets do not produce the same extremes. Does that choice change what we conclude about forest mortality? I computed 6 extreme-event indices (heat, cold, drought) with 5 climate datasets, two of which I downscaled from 8-10 km to 1 km, then modelled the mortality of 8 tree species on 21,989 National Forest Inventory plots (GLMs in R, BIC selection, 1,000 validation splits).</p><h4>How this fits the literature</h4><p>To my knowledge, few studies focus specifically on the role of climate extremes in forest mortality; the closest is Carletti et al. (2026), on silver fir and Norway spruce. Despite different methods, some trends agree: in spruce the most explanatory variables are also heat-related, and in fir both studies find a role for cold spells (5.5% of importance in my study vs 2.5%). Extremes weigh much more in theirs, however (up to 22% for fir and 29% for spruce): that study focused on pure stands and included autumn extremes, which mine did not.</p><div class="figures">
+<figure>
+<div class="fig-cadre">
+<img alt="Two maps of the Northern Alps: minimum temperature on an 8 km grid, then at 1 km where valleys and ridges appear" loading="lazy" src="images/descente_echelle_alpes.png"/>
+<span class="fig-label g">SAFRAN 8 km</span><span class="fig-label d">1 km (downscaled)</span><span class="fig-nord">▲<br/>N</span>
+</div>
+<div class="fig-legende"><span>−3 °C</span><span class="degrade"></span><span>8.5 °C</span></div>
+<figcaption>Mean minimum temperature in 2014 in the Northern Alps. Downscaling (delta method, corrected with the 1 km DIGITALIS data) reveals valleys and ridges.</figcaption>
+</figure>
+<figure>
+<img alt="Table: for each species and climate dataset, the most important climate extreme in the mortality model" loading="lazy" src="images/ece_dominant_par_base.png"/>
+<figcaption>The most important extreme in the mortality model, by species and climate dataset. Only black pine and Norway spruce keep the same one (TXx) across all 5 datasets. From my poster.</figcaption>
+</figure>
+</div><h4>Next steps</h4><ul class="cles">
+<li><b>Resolution and selection:</b> understand why more indices enter the models at 1 km.</li>
+<li><b>Autumn extremes:</b> include them, since they matter in Carletti et al. (2026).</li>
+<li><b>Cold and pests:</b> test the indirect effect of cold through spruce bark beetles, using biotic data.</li>
+<li><b>Finer data:</b> examine Météo-France 2.5 km products and feed process-based models such as SurEau.</li>
+</ul><p class="qualite"><b>Quality assurance.</b> I published the full processing pipeline openly, with a 17-item register (ERRATA) documenting every error found afterwards and its effect on the results: none invalidates the conclusions, the most exposed being the low weight of drought. Outliers were kept and explained rather than discarded.</p><ul class="outils"><li>R</li><li>terra</li><li>Climpact</li><li>GLM</li><li>NFI data</li><li>Downscaling</li></ul><p class="liens"><a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret/blob/main/docs/rapport_stage_M2_Genty_2026.pdf">Internship report (PDF, in French)</a> · <a href="documents/Poster_stage_M2_Genty_2026.pdf">Poster (PDF, A0, in French)</a> · <a href="documents/Soutenance_stage_M2_Genty_2026.pdf">Defence slides (PDF, 41 slides, in French)</a> · <a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret">Code repository</a> · <a href="https://github.com/jeremygenty36-boop/ece-mortalite-foret/blob/main/ERRATA.md">ERRATA</a></p></details></div>
+<a class="poster" href="documents/Poster_stage_M2_Genty_2026.pdf"><img alt="Internship poster preview: same performance, different reading" loading="lazy" src="images/poster_vignette.png"/><span>View the poster</span></a>
+</article><article class="projet vedette">
+<figure class="vignette-carte"><p class="fig-titre">Trend in heat extremes (TXx), 1979-2024</p><a class="visuel" href="carte/en.html"><img alt="Map of France showing the trend in heat extremes from 1979 to 2024" loading="lazy" src="images/carte_txx_tendance.png"/></a><div class="fig-legende"><span>−1.4</span><span class="degrade-tend"></span><span>+1.4 °C per decade</span></div><figcaption>Change in the hottest daily maximum temperature of the year (March to November), per cell of about 10 km. Red: warming extremes; blue: cooling; faded colours: non-significant trend (7% of the territory). Click the map to open it.</figcaption></figure>
+<div>
+<p class="etiquette">Interactive map · 2026</p>
+<h3>Climate extremes in France: 1979-2024</h3>
+<p class="resultat">The hottest days of the year have warmed by 0.8 °C per decade on average in France since 1979, and heatwaves rose from 1.4 to 5 per year (May to September, 1979-1988 vs 2015-2024 averages).</p>
+<details class="detail"><summary>Method, figures and documents</summary><p>Six heat, cold and drought indices (including heatwaves and cold spells), year by year, across mainland France. I recomputed the indices from the European E-OBS observations (11 GB of daily data) with the method of my internship, then built an interactive map: year-by-year animation, 10-year extremes, trends with their significance, and the time series of any location on click.</p><p>The map connects to my internship: for each index it shows its weight in the mortality models of 8 tree species and each species' response curve, and a second layer maps the mortality observed in the National Forest Inventory by département.</p><ul class="outils"><li>R</li><li>NetCDF</li><li>SPEI</li><li>JavaScript</li><li>Mapping</li></ul><p class="liens"><a href="carte/en.html">Open the map</a> · <a href="https://github.com/jeremygenty36-boop/carte-extremes-climatiques">Code</a></p></details></div>
+</article>
+<article class="projet" id="fredon">
+<div>
+<p class="etiquette">Work experience · FREDON Centre-Val de Loire, Orléans · June-December 2022 · on behalf of the regional agriculture directorate (DRAAF)</p>
+<h3>Specialised technician: plant-health inspections</h3>
+<p class="resultat">Six months of regulatory plant-health fieldwork, in direct contact with professionals.</p>
+<details class="detail"><summary>Duties</summary>
+<ul class="cles">
+<li><b>Inspections for the EU plant passport</b> at growers, nurseries and garden centres.</li>
+<li><b>Surveys of gardens, green spaces and infrastructure (JEVI).</b></li>
+<li><b>Written inspection reports</b> and discussions with the inspected businesses.</li>
+</ul>
+<ul class="outils"><li>Plant health</li><li>Regulation</li><li>Fieldwork</li><li>Working with professionals</li></ul>
+</details>
+</div>
+</article>
+<article class="projet" id="landes">
+<div>
+<p class="etiquette">First-year Master's project · Landscape ecology and GIS, University of Orléans · 2023-2024 · with Pierre Sergent</p>
+<h3>Mapping the summer 2022 wildfires in the Landes de Gascogne forest</h3>
+<p class="resultat">At La Teste-de-Buch we measured 3,538 ha burnt, against 3,500 ha reported in the press, and 12,737 ha around Hostens. Overall accuracy of 93.8% by area.</p>
+<details class="detail"><summary>Method, figures and documents</summary><p>From two Sentinel-2 images (September 2021 and September 2022), we mapped the forests burnt by the two large fires of summer 2022: before/after vegetation index (NDVI) difference, forest mask from the OSO land-cover map, thresholding into three probability classes, sieving and vectorisation in QGIS and Orfeo ToolBox, then validation by photo-interpretation of 50 polygons per class.</p><figure class="seule">
+<img alt="Map of areas burnt in 2022 between the Arcachon basin and Hostens, in three probability classes" loading="lazy" src="images/landes_incendies_2022.jpg"/>
+<figcaption>Final map: burnt areas by detection probability over a Sentinel-2 image. We also point out limitations, such as misclassifications in the OSO map.</figcaption>
+</figure><ul class="outils"><li>Sentinel-2</li><li>NDVI</li><li>QGIS</li><li>Orfeo ToolBox</li><li>Photo-interpretation</li></ul><p class="liens"><a href="documents/Incendies_Landes_2022_Genty_Sergent.pdf">Full presentation (PDF, 40 slides, in French)</a></p></details></div>
+</article>
+<article class="projet" id="phyto">
+<div>
+<p class="etiquette">First-year Master's · Phytosociology and plant ecology, University of Orléans · 2023-2024 · with Claire Bellin</p>
+<h3>Phytosociology of meadows and dry grasslands in the Loiret</h3>
+<p class="resultat">11 plant communities identified. The two main groups differ in soil fertility and moisture (Mann-Whitney, p &lt; 0.001), not in pH. A limitation we acknowledged: the classification structure remains weak (mean silhouette of 0.08).</p>
+<details class="detail"><summary>Method, figures and documents</summary><p>From 258 vegetation relevés at three sites in the Loiret (Saint-Mesmin, Tavers, Guilly), we grouped the relevés by hierarchical clustering (chord distance, Ward's method), chose the number of groups with silhouette and OptimClass, assigned each group to a described syntaxon (association or alliance), then compared groups with ecograms and a synoptic table to propose suitable management.</p><figure class="seule">
+<img alt="Dendrogram of the 258 relevés split into two main groups and eleven clusters" loading="lazy" src="images/phyto_dendrogramme.jpg"/>
+<figcaption>Dendrogram of the relevés: two main groups and 11 clusters, then assigned to described syntaxa.</figcaption>
+</figure><ul class="outils"><li>Botany</li><li>Field surveys</li><li>Classification</li><li>R</li><li>Habitat management</li></ul><p class="liens"><a href="documents/Phytosociologie_Loiret_Bellin_Genty.pdf">Presentation slides (PDF, in French)</a></p></details></div>
+</article>
+<article class="projet">
+<div>
+<p class="etiquette">First-year Master's internship · Gembloux Agro-Bio Tech (University of Liège) and CRA-W, Lipomme BIO project · 2024</p>
+<h3>Does a biological fungicide harm beneficial insects in orchards?</h3>
+<p class="resultat">1,813 insects from 31 families, with no community difference between treatments (p = 0.276): weather matters far more than treatment. I discuss the protocol's biases, such as insects moving between neighbouring trees.</p>
+<details class="detail"><summary>Method, figures and documents</summary><p>Mycosubtilin, an antifungal molecule of bacterial origin, is being studied as an alternative to copper and sulphur against apple scab. I compared insects caught in yellow traps under four treatments (water, mycosubtilin, sulphur and copper, GAWI method), on 4 replicates of 10 apple trees over 18 weeks: family-level identification, principal component analysis and Kruskal-Wallis test in R.</p><ul class="outils"><li>Fieldwork</li><li>Entomology</li><li>R</li><li>Statistics</li><li>Poster</li></ul><p class="liens"><a href="documents/Poster_stage_M1_Genty_2024.pdf">Poster (PDF, in French)</a></p></details></div>
+<a class="poster" href="documents/Poster_stage_M1_Genty_2024.pdf"><img alt="Preview of the first-year Master's internship poster on mycosubtilin and beneficial insects" loading="lazy" src="images/poster_m1_vignette.jpg"/><span>View the poster</span></a>
+</article>
+</section>
+<section id="formation">
+<h2>Other coursework</h2>
+<div class="travaux">
+<article class="travail" id="capricorne">
+<a href="documents/Poster_capricorne_asiatique_Genty_Paillard.pdf"><img alt="Preview of the poster on the phylogeography of the Asian longhorned beetles" class="portrait" loading="lazy" src="images/capricorne_poster.jpg"/></a>
+<div>
+<p class="etiquette">First-year Master's · Evolutionary biology · 2023 · with Emma Paillard</p>
+<h3>Phylogeography of the Asian longhorned beetles</h3>
+<details class="detail"><summary>Details and document</summary><p>Tracing the invasion routes of <i>Anoplophora glabripennis</i> and <i>A. chinensis</i> in France from DNA sequences: trapping, PCR, COI gene sequencing, phylogenetic trees in MEGA.</p><ul class="outils"><li>Invasive species</li><li>Forest health</li><li>Genetics</li></ul><p class="liens"><a href="documents/Poster_capricorne_asiatique_Genty_Paillard.pdf">Poster (PDF, in French)</a></p></details></div>
+</article>
+<article class="travail" id="sandillon">
+<a href="documents/Restauration_carriere_Sandillon_Bellin_Genty.pdf"><img alt="Map of fauna and flora survey points at the Sandillon quarry" loading="lazy" src="images/sandillon_releves.jpg"/></a>
+<div>
+<p class="etiquette">First-year Master's · Restoration ecology · 2024 · with Claire Bellin</p>
+<h3>Ecological restoration of a quarry (Sandillon, Loiret)</h3>
+<details class="detail"><summary>Details and document</summary><p>Comparing areas quarried until 2006 and 2016 with a control area: bird point counts, ground-beetle pitfall traps, reptile boards, plant surveys; Jaccard similarity, Raunkiaer life forms, Ellenberg indicator values.</p><ul class="outils"><li>Fauna and flora surveys</li><li>Restoration</li><li>QGIS</li><li>R</li></ul><p class="liens"><a href="documents/Restauration_carriere_Sandillon_Bellin_Genty.pdf">Report (PDF, 19 pages, in French)</a></p></details></div>
+</article>
+<article class="travail" id="courpain">
+<a href="documents/Habitats_carriere_Courpain_Genty_Beaubois.pdf"><img alt="Habitat map of the former Courpain quarry with the GPS survey points" loading="lazy" src="images/courpain_habitats.jpg"/></a>
+<div>
+<p class="etiquette">Bachelor's, 3rd year · Phytosociology and geomatics · 2021 · with Vélinka Beaubois</p>
+<h3>Habitat mapping of a former quarry (Courpain)</h3>
+<details class="detail"><summary>Details and document</summary><p>On a restored 17 ha quarry: georeferenced vegetation relevés, habitat map in QGIS (4.2 ha of grasslands and meadows, 5.1 ha of open water), factor analyses and dendrograms distinguishing three main vegetation types.</p><ul class="outils"><li>Habitat mapping</li><li>GPS</li><li>QGIS</li><li>Phytosociology</li></ul><p class="liens"><a href="documents/Habitats_carriere_Courpain_Genty_Beaubois.pdf">Report (PDF, in French)</a></p></details></div>
+</article>
+<article class="travail">
+<div>
+<p class="etiquette">First-year Master's · Plant pathology · 2023-2024 · with Garance Delmas</p>
+<h3>Poplar rust and plant disease diagnosis</h3>
+<details class="detail"><summary>Details and document</summary><p>Pathotyping strains of <i>Melampsora larici-populina</i> on poplar clones: one strain characterised, the other uninterpretable because the control was not infected, which we discuss. Then 25 diagnostic sheets: powdery mildews, rusts, galls, mistletoe, fire blight, viruses.</p><ul class="outils"><li>Plant pathology</li><li>Forest health</li><li>Diagnostic</li></ul><p class="liens"><a href="documents/Rouille_peuplier_phytopathologie_Genty_Delmas.pdf">Report (PDF, in French)</a></p></details></div>
+</article>
+</div>
+</section>
+<section id="genetique-ecologie">
+<h2>Education: genetics and ecology</h2>
+<p class="intro-section">Beyond climate and data, my biology education at the University of Orléans gave me two more strings to my bow: population genetics and ecology, from individuals to landscapes.</p>
+<p class="points-forts"><b>1<sup>st</sup> in my year</b> in Evolutionary biology and population genetics (16.5/20), Ecological networks (15.75/20) and Genomics of forest ecosystems (15.5/20); <b>2<sup>nd</sup></b> in Community ecology (17.5/20).</p>
+<div class="deux-col">
+<div class="col-ue">
+<h3>🧬 Genetics and evolution</h3>
+<ul class="ue">
+<li class="depliable"><details class="ue-detail"><summary><b>Evolutionary biology and population genetics</b><span>1st-year MSc · 16.5/20, ranked 1<sup>st</sup> of 20</span></summary><small>Phylogeography, subdivided populations and migration models.</small><small class="rendu">Coursework: <a href="#capricorne">poster on the phylogeography of the Asian longhorned beetles</a>; a five-person paper presentation on the phylogeography of cheetahs in Africa and Asia (Charruau et al., 2011) and its implications for conservation. <a href="documents/Phylogeographie_guepard_Genty_Paillard_Sergent_Bellin_Moussa.pdf">Slides (PDF, 39 slides, in French)</a></small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Genomics for integrative biology</b><span>2nd-year MSc · 14.3/20, ranked 2<sup>nd</sup> of 17</span></summary><small>Including a case study in the genomics of forest ecosystems (15.5/20, ranked 1<sup>st</sup>) and an introduction to bioinformatics.</small><small class="rendu">Coursework: a four-person paper presentation on the epigenetics of tree-fungus interactions: DNA hypomethylation of the host tree impairs its symbiosis with an ectomycorrhizal fungus (Vigneaud et al., 2023).</small></details></li>
+<li><b>Evolutionary biology and population genomics</b><span>2nd-year MSc</span></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Plant genetics and breeding</b><span>1st-year MSc · Genetics 2: 15/20</span></summary><small class="rendu">Individual report: drought resistance of two poplar genotypes (Skado, Koster) under different nitrogen supply, measured by P50 (the water tension causing 50% embolism) from vulnerability curves in R. In Skado, P50 differs significantly between low and optimal nitrogen. <a href="documents/Cavitation_peuplier_Genty_2024.pdf">Report (PDF, in French)</a></small></details></li>
+<li><b>Genomics</b><span>1st-year MSc</span></li>
+<li><b>Evolutionary and molecular biology, molecular biology techniques</b><span>Bachelor's</span></li>
+</ul>
+</div>
+<div class="col-ue">
+<h3>🌿 Ecology</h3>
+<ul class="ue">
+<li class="depliable"><details class="ue-detail"><summary><b>Restoration ecology</b><span>1st-year MSc · 15.25/20, ranked 2<sup>nd</sup> of 20</span></summary><small>Including Community ecology: concepts and tools (17.5/20).</small><small class="rendu">Coursework: <a href="#sandillon">report on the restoration of the Sandillon quarry</a> (bird, ground-beetle, reptile and plant surveys; analyses in R).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Ecological networks</b><span>2nd-year MSc · 15.75/20, ranked 1<sup>st</sup> of 17</span></summary><small class="rendu">R practical: comparing plant-insect interaction networks in ornamental and wild settings (connectance, nestedness, compartments; bipartite and igraph packages).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Landscape ecology and GIS</b><span>1st-year MSc · 15.84/20, ranked 4<sup>th</sup> of 38</span></summary><small class="rendu">Coursework: <a href="#landes">mapping of the 2022 wildfires in the Landes</a> (Sentinel-2, QGIS).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Phytosociology and plant ecology</b><span>1st-year MSc and Bachelor's</span></summary><small class="rendu">Coursework: <a href="#phyto">presentation on the meadows and grasslands of the Loiret</a> (MSc); <a href="#courpain">habitat mapping at Courpain</a> (Bachelor's).</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Invasion biology, conservation biology</b><span>2nd-year MSc</span></summary><small class="rendu">Coursework: a video analysing a paper on the invasion of the yellow-legged hornet in Europe (Arca et al., 2015), 8 min, with Claire Bellin (in French); a concept map of conservation biology (group of four).</small><video class="video-ue" controls="" poster="images/frelon_video_apercu.jpg" preload="none" src="documents/Frelon_asiatique_analyse_article_Genty_Bellin.mp4">Your browser cannot play this video: <a href="documents/Frelon_asiatique_analyse_article_Genty_Bellin.mp4">download it</a>.</video></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Forests and climate change</b><span>2nd-year MSc</span></summary><small>Adaptation challenges and levers, forest health monitoring.</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Ecotoxicology and phytoremediation</b><span>1st-year MSc</span></summary><small class="rendu">Report with Claire Bellin: phytostabilisation of metals in a mining soil planted with willow, assisted by biochar.</small></details></li>
+<li class="depliable"><details class="ue-detail"><summary><b>Population, community and functional ecology; bioindication</b><span>Bachelor's · Population ecology: 16/20</span></summary><small class="rendu">Coursework: soil-science report on the soils of the Orléans state forest (Ingrannes block), with Robin Cascales.</small></details></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="outils">
+<h2>Tools I built for myself</h2>
+<p class="intro-section">I designed a few tools for my own needs: they show I can automate a task and go beyond R. I developed them with the help of an AI assistant (Claude): I define the need, test and validate every step.</p>
+<div class="travaux">
+<article class="travail"><div>
+<p class="etiquette">macOS app · Swift and web · offline</p>
+<h3>Apprendre: my study platform</h3>
+<details class="detail"><summary>Details</summary>
+<p>Lessons and over 800 multiple-choice questions with explanations, reviewed with spaced repetition: botany, statistics, R, Python (with a built-in Python console), SQL. I use it to dig into a new subject from the documentation I gather.</p>
+<ul class="outils"><li>Swift</li><li>JavaScript</li><li>Learning</li></ul>
+</details>
+</div></article>
+<article class="travail"><div>
+<p class="etiquette">Python and JavaScript · automated daily task</p>
+<h3>Automated literature monitoring</h3>
+<details class="detail"><summary>Details</summary>
+<p>Every morning, a script queries the OpenAlex bibliographic database on my topics (forest dieback, climate extremes, remote sensing, forest health…) and shows me the new papers. One click sends a paper to Zotero with its open-access PDF and files it automatically in the right folder.</p>
+<ul class="outils"><li>Python</li><li>API OpenAlex</li><li>Zotero</li><li>Automation</li></ul>
+</details>
+</div></article>
+</div>
+</section><section id="parcours">
+<h2>Background</h2>
+<ol class="frise">
+<li><span class="date">Feb-Jul 2026</span><div><b>Master's internship: climate extremes and forest mortality</b><br/>UMR Silva, Nancy</div></li>
+<li><span class="date">2023-2026</span><div><b>Master's in Agricultural and Environmental Sciences, Landscape and Forestry</b><br/>University of Orléans. Master's internship graded 16.3/20.</div></li>
+<li><span class="date">Feb-Apr 2024</span><div><b>First-year Master's internship: biocontrol in orchards</b><br/>Gembloux Agro-Bio Tech, Belgium. Erasmus+ mobility.</div></li>
+<li><span class="date">Jun-Dec 2022</span><div><b>Specialised technician: plant-health inspections</b><br/>FREDON Centre-Val de Loire, on behalf of the regional agriculture directorate (DRAAF). EU plant passport inspections at growers, nurseries and garden centres.</div></li>
+<li><span class="date">2019-2023</span><div><b>Bachelor's in Life Sciences: biology of organisms, populations and ecosystems</b><br/>University of Orléans</div></li>
+</ol>
+</section>
+<section id="competences">
+<h2>Skills</h2>
+<div class="grille">
+<div><h3>Climate and environment</h3><p>Climate extremes, drought (SPEI), climate datasets (SAFRAN, E-OBS, CHELSA), climate change adaptation, plant health.</p></div>
+<div><h3>Data and analysis</h3><p>R (terra, generalised linear models), NetCDF data, GIS (QGIS, PostGIS, SQL), remote sensing (Sentinel-2, NDVI, Orfeo ToolBox), statistics. Currently learning Python.</p></div>
+<div><h3>Communication</h3><p>Reports and briefing notes, maps and figures, oral presentations, posters, interactive web pages.</p></div>
+<div><h3>Fieldwork</h3><p>Plant surveys and phytosociology, insect trapping and identification, regulatory inspections, working with professionals, ornithology.</p></div>
+<div><h3>Languages</h3><p>French (native), English B2/C1, German A2.</p></div>
+<div><h3>Interests</h3><p>Botany, birdwatching, cycling, running, hiking.</p></div></div>
+</section>
+<section class="contact" id="contact">
+<h2>Contact</h2>
+<p>I am looking for a position as a research officer or project officer in climate, environmental data or forestry.</p>
+<p><a class="bouton" href="mailto:genty.jeremy36@gmail.com">genty.jeremy36@gmail.com</a> <a class="bouton secondaire" href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-genty/">LinkedIn</a></p>
+<p class="references">References available on request: supervisors of my Master's internships (second and first year).</p></section>
+</main>
+<footer class="enveloppe"><p>© 2026 Jérémy Genty. Updated October 2026. Static page, no trackers or cookies. Linked documents are in French. <a href="index.html" hreflang="fr" title="Version française"><img alt="Version française" class="drapeau-pied" height="14" src="images/drapeau_fr.svg" width="21"/></a></p></footer>
+<script>
+document.getElementById("tout-ouvrir").onclick = () => document.querySelectorAll("details").forEach(d => d.open = true);
+document.getElementById("tout-fermer").onclick = () => document.querySelectorAll("details").forEach(d => d.open = false);
+// un lien interne vers un element replie l'ouvre
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", () => {
+  const c = document.querySelector(a.getAttribute("href")); if (!c) return;
+  let d = c.closest("details"); while (d) { d.open = true; d = d.parentElement.closest("details"); }
+  c.querySelectorAll(":scope > div > details.detail").forEach(x => x.open = true);
+}));
+</script></body>
+</html>

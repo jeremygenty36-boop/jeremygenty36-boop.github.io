@@ -1,0 +1,5 @@
+.DS_Store
+outils/__pycache__/
+outils/resume/*.aux
+outils/resume/*.log
+outils/resume/*.out
