@@ -112,7 +112,7 @@ T = {
 "Détails et document": "Details and document",
 "Retracer les voies d'invasion d'": "Tracing the invasion routes of ",
 "et d'": "and ",
-"en France à partir de séquences ADN : piégeage, PCR, séquençage du gène COI, arbres phylogénétiques sous MEGA.": "in France from DNA sequences: trapping, PCR, COI gene sequencing, phylogenetic trees in MEGA.",
+"en France à partir du gène mitochondrial COI (195 séquences), avec des réseaux d'haplotypes refaits sous R : le foyer de Royan vient directement de Chine et non d'Italie, celui de Gien porte un haplotype qui lui est propre.": "in France from the mitochondrial COI gene (195 sequences), with haplotype networks redone in R: the Royan outbreak comes directly from China, not from Italy, and the Gien outbreak carries its own haplotype.",
 "Espèces invasives": "Invasive species",
 "Santé des forêts": "Forest health",
 "Génétique": "Genetics",

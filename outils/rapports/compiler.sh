@@ -1,6 +1,6 @@
 #!/bin/sh
 # Compile un ou tous les rapports et copie le PDF dans documents/.
-# Usage : ./compiler.sh [cavitation|restauration|courpain|rouille]
+# Usage : ./compiler.sh [cavitation|restauration|courpain|rouille|capricorne]
 set -e
 cd "$(dirname "$0")"
 declare_cible() { case $1 in
@@ -8,8 +8,9 @@ declare_cible() { case $1 in
   restauration) echo Restauration_carriere_Sandillon_Bellin_Genty ;;
   courpain) echo Habitats_carriere_Courpain_Genty_Beaubois ;;
   rouille) echo Rouille_peuplier_phytopathologie_Genty_Delmas ;;
+  capricorne) echo Poster_capricorne_asiatique_Genty_Paillard ;;
 esac; }
-for r in ${1:-cavitation restauration courpain rouille}; do
+for r in ${1:-cavitation restauration courpain rouille capricorne}; do
   ( cd "$r"
     xelatex -interaction=nonstopmode -halt-on-error "$r" >/dev/null
     bibtex "$r" >/dev/null
