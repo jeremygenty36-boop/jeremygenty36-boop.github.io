@@ -1,0 +1,110 @@
+% Charte commune des rapports du portfolio (meme typo et palette que le resume).
+% Chaque rapport definit avant \begin{document} :
+%   \definecolor{theme}{HTML}{...}  \titrerapport{...} \soustitre{...} \auteurs{...}
+%   \cadre{...} \annee{...} \motcle{...} \visuel{<code TikZ ou \includegraphics>}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rapport-portfolio}
+\RequirePackage[a4paper,margin=22mm,top=24mm,bottom=24mm,headsep=8mm]{geometry}
+\RequirePackage{fontspec}
+\setmainfont{Source Sans 3}[BoldFont={Source Sans 3 SemiBold}]
+\newfontfamily\titre{Lora}[BoldFont={Lora SemiBold},ItalicFont={Lora},ItalicFeatures={FakeSlant=0.18}]% Lora italique non installee
+\RequirePackage[french]{babel}
+\RequirePackage{xcolor,graphicx,tikz,booktabs,tabularx,array,enumitem,caption,fancyhdr,titlesec,needspace,float,multirow,colortbl}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{csquotes}
+\RequirePackage[style=authoryear,maxcitenames=2,uniquename=false,uniquelist=false,backend=bibtex,sorting=nyt,giveninits=true,dashed=false]{biblatex}
+\usetikzlibrary{calc,fadings}
+\RequirePackage[section]{placeins}% les figures restent dans leur section
+\DefineBibliographyExtras{french}{\renewcommand*{\mkbibnamefamily}[1]{#1}}% pas de petites capitales
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\topfraction}{0.85}
+
+\definecolor{vert}{HTML}{1A6B3C}
+\definecolor{gris}{HTML}{5B655E}
+\definecolor{fond}{HTML}{E8F2EC}
+\colorlet{theme}{vert}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\linespread{1.08}
+\setlist{nosep,leftmargin=14pt,itemsep=2pt,topsep=3pt}
+\frenchsetup{SmallCapsFigTabCaptions=false}
+
+% Titres : Lora, couleur du theme
+\titleformat{\section}{\titre\Large\bfseries\color{theme}}{\thesection.}{0.5em}{}[\vspace{-4pt}{\color{theme!40}\rule{\linewidth}{0.6pt}}]
+\titleformat{\subsection}{\titre\large\bfseries\color{theme!85!black}}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\bfseries\color{theme}}{}{0em}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{6pt}{1pt}
+
+% Legendes
+\captionsetup{font={small,color=gris},labelfont={bf,color=theme},labelsep=period,justification=justified,singlelinecheck=true}
+\captionsetup[table]{position=top,skip=4pt}
+
+% En-tete / pied
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\small\color{gris}\@titrecourt}
+\fancyhead[R]{\small\color{gris}\@auteurs}
+\fancyfoot[C]{\small\color{theme}\bfseries\thepage}
+
+% Encadre "en bref" et note de revision
+\newcommand{\enbref}[1]{\par\noindent\colorbox{theme!10}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small\textbf{\color{theme}En bref.} #1}}\par}
+\newcommand{\noterevision}[1]{\par\noindent{\footnotesize\color{gris}\textit{#1}}\par}
+
+% Tableaux : en-tete teinte
+\newcommand{\entete}{\rowcolor{theme!12}}
+
+% Metadonnees de la page de garde
+\newcommand{\titrerapport}[1]{\def\@titrerapport{#1}}
+\newcommand{\titrecourt}[1]{\def\@titrecourt{#1}}
+\newcommand{\soustitre}[1]{\def\@soustitre{#1}}
+\newcommand{\auteurs}[1]{\def\@auteurs{#1}}
+\newcommand{\cadre}[1]{\def\@cadre{#1}}
+\newcommand{\annee}[1]{\def\@annee{#1}}
+\newcommand{\motcle}[1]{\def\@motcle{#1}}
+\newcommand{\visuel}[1]{\def\@visuel{#1}}
+\newcommand{\creditvisuel}[1]{\def\@creditvisuel{#1}}
+% Photo de couverture recadree aux coins arrondis : \photogarde{fichier}
+\newcommand{\photogarde}[1]{\begin{tikzpicture}
+  \clip[rounded corners=4mm] (0,0) rectangle (166mm,100mm);
+  \node[anchor=center,inner sep=0pt] at (83mm,50mm) {\includegraphics[width=166mm,height=100mm,keepaspectratio=false]{#1}};
+\end{tikzpicture}}
+\creditvisuel{}
+
+% Page de garde : bandeau theme, visuel pleine largeur, titre, puis cartouche
+\newcommand{\pagedegarde}{%
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[theme] (current page.north west) rectangle ([yshift=-62mm]current page.north east);
+    \fill[theme!12] ([yshift=-62mm]current page.north west) rectangle (current page.south east);
+    % motif de courbes de niveau discret dans le bandeau
+    \begin{scope}
+      \clip (current page.north west) rectangle ([yshift=-62mm]current page.north east);
+      \foreach \r in {18,30,...,150}
+        \draw[white,opacity=0.10,line width=0.6pt] ([xshift=-25mm,yshift=-10mm]current page.north east) circle (\r mm);
+    \end{scope}
+    \node[anchor=north west,text=white,font=\small\bfseries,inner sep=0pt] at ([xshift=22mm,yshift=-18mm]current page.north west)
+      {\MakeUppercase{\@motcle}};
+    \node[anchor=north west,text=white,text width=166mm,inner sep=0pt,align=left] at ([xshift=22mm,yshift=-26mm]current page.north west)
+      {\raggedright\titre\fontsize{25}{30}\selectfont\bfseries\hyphenchar\font=-1 \@titrerapport\par};
+    \node[anchor=north,inner sep=0pt] (vis) at ([yshift=-74mm]current page.north) {\@visuel};
+    \node[anchor=north east,font=\scriptsize,text=gris,inner sep=0pt] at ([yshift=-1.5mm]vis.south east) {\@creditvisuel};
+    \node[anchor=south west,text width=166mm,inner sep=0pt,align=left] at ([xshift=22mm,yshift=26mm]current page.south west)
+      {{\titre\Large\color{theme!80!black}\@soustitre\par}\vspace{9mm}
+       {\color{theme}\rule{30mm}{1.2pt}}\par\vspace{4mm}
+       {\large\bfseries\@auteurs}\par\vspace{2mm}
+       {\color{gris}\@cadre}\par\vspace{1mm}
+       {\color{gris}\@annee}};
+  \end{tikzpicture}%
+  \clearpage}
+
+% Bibliographie sur sa propre page
+\DeclareFieldFormat{url}{\href{#1}{\color{theme}\nolinkurl{#1}}}
+\newcommand{\pagebiblio}{\clearpage\printbibliography[heading=bibintoc,title={Bibliographie}]}
+\defbibheading{bibintoc}[\bibname]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+\renewcommand*{\bibfont}{\small}
+\setlength{\bibitemsep}{4pt}
+\newcommand{\sectionbreak}{\needspace{10\baselineskip}}% pas de titre seul en bas de page
+\endinput

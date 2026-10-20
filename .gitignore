@@ -3,3 +3,14 @@ outils/__pycache__/
 outils/resume/*.aux
 outils/resume/*.log
 outils/resume/*.out
+outils/rapports/*/donnees/
+outils/rapports/*/*.aux
+outils/rapports/*/*.log
+outils/rapports/*/*.out
+outils/rapports/*/*.bbl
+outils/rapports/*/*.blg
+outils/rapports/*/*.bcf
+outils/rapports/*/*.run.xml
+outils/rapports/*/*-blx.bib
+outils/rapports/*/*.pdf
+!outils/rapports/*/figures/*.pdf
