@@ -285,4 +285,8 @@ T.update({
 
 T.update({"Ouvrir la carte": "Open the map"})
 
-T.update({"Résumé imprimable (PDF, 2 pages)": "Printable summary (PDF, 2 pages, in French)"})
+T.update({"Résumé imprimable (PDF, 2 pages)": "Printable summary (PDF, 2 pages, in French)",
+"Page de garde du rapport sur la restauration de la carrière de Sandillon": "Cover page of the report on the restoration of the Sandillon quarry",
+"Page de garde du compte rendu sur les habitats de la carrière de Courpain": "Cover page of the report on the habitats of the Courpain quarry",
+"Page de garde du compte rendu sur la rouille du peuplier et le diagnostic des maladies": "Cover page of the report on poplar rust and plant disease diagnosis",
+})
